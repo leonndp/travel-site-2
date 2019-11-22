@@ -1,13 +1,21 @@
 .row {
 
-    @mixin clearfix;
+    /* @mixin clearfix;
 
     &--gutters {
         margin-right: -65px;
     }
 
+    &--gutters-large {
+        margin-right: -100px;
+    }
+
     &--gutters > div {
         padding-right: 65px;
+    }
+
+    &--gutters-large > div {
+        padding-right: 100px;
     }
 
     &__b-margin-until-medium {
@@ -23,6 +31,11 @@
         &__medium-4--larger {
             width:37%;
         }
+
+        &__medium-6 {
+            float:left;
+            width: 50%;
+        }
     
         &__medium-8 {
             float:left;
@@ -36,11 +49,13 @@
         &__b-margin-until-medium {
             margin-bottom: 0;
         }
-    }
+    } */
+
+
 
     /* CSS Grid */
 
-   /*  &__b-margin-until-medium {
+    /* &__b-margin-until-medium {
         margin-bottom: 1rem;
     }
 
@@ -49,15 +64,32 @@
         
 
         &--gutters {
-            grid-template-columns: repeat(12, calc(40% / 12));
-            grid-column-gap: calc(60%/12);
+            grid-template-columns: repeat(12, minmax(1px, calc(100% / 12)));
+            grid-gap: 65px;
+        }
+
+        &--gutters-large {
+            grid-template-columns: repeat(12, minmax(1px, calc(100% / 12)));
+            grid-gap: 100px;
         }
         
         &__medium-4 {
+            grid-column: span 4;
+        }
+
+        &__medium-4--larger {
             grid-column: span 5;
+        }
+
+        &__medium-6 {
+            grid-column: span 6;
         }
     
         &__medium-8 {
+            grid-column: span 8;
+        }
+
+        &__medium-8--smaller {
             grid-column: span 7;
         }
 
@@ -65,4 +97,56 @@
             margin-bottom: 0;
         }
     }  */
+
+
+
+    /* Flexbox */
+    
+    &--gutters {
+        margin-right: -65px;
+    }
+
+    &--gutters-large {
+        margin-right: -100px;
+    }
+
+    &--gutters > div {
+        padding-right: 65px;
+    }
+
+    &--gutters-large > div {
+        padding-right: 100px;
+    }
+
+    &__b-margin-until-medium {
+        margin-bottom: 1rem;
+    }
+
+    @mixin atMedium {
+        display:flex;
+        
+        &__medium-4 {
+            flex:4;
+        }
+
+        &__medium-4--larger {
+            flex:5;
+        }
+
+        &__medium-6 {
+            flex:1;
+        }
+    
+        &__medium-8 {
+            flex: 8;
+        }
+
+        &__medium-8--smaller {
+            flex:7;
+        }
+
+        &__b-margin-until-medium {
+            margin-bottom: 0;
+        }
+    } 
 }
