@@ -34,6 +34,7 @@
     }
 
     @mixin atMedium {
+
         &__medium-4 {
             flex:4;
         }
@@ -60,6 +61,8 @@
     } 
 
     @mixin atLarge {
+        display: flex;
+        
         &__large-4 {
             flex:4;
         }
@@ -87,7 +90,7 @@
 
     &--equal-height-at-medium {
         @mixin atMedium {
-            display: flex
+            display: flex;
         }
 
         & > div {
