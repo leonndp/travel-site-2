@@ -21,7 +21,7 @@ export default class ClientArea {
             this.form.remove();
             this.contentArea.innerHTML = response.data;
         }).catch((err) => {
-            this.contentArea.innerHTML = `<p class="client-area__error>That's not the secret phrase! Try again.</p>`
+            this.contentArea.innerHTML = `<p class="client-area__error">That's not the secret phrase! Try again.</p>`
             this.field.value = '';
             this.field.focus();
         });
